@@ -11,12 +11,20 @@ body{
 
 
 
+
 .nav-link{
    color: rgba(255,255,255,.5);
    margin-left: 3rem;
    font-weight:700;
    border-bottom: 0.20rem solid transparent;
    
+}
+
+@media (max-width:500px) {
+    .nav-link{
+        margin:0;
+    }
+
 }
 
 .nav-link:hover{
