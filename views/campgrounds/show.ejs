@@ -1,12 +1,5 @@
 <% layout('layouts/boilerplate')%>
 <link rel="stylesheet" href="/stylesheets/stars.css">
-
-<script>
- 
-    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campground = <%-JSON.stringify(campground) %>;
-</script>
-
 <div class="row">
     <div class="col-6">
         <div id="carouselExample" class="carousel slide" data-ride="carousel">
@@ -29,8 +22,6 @@
             <% } %>
           </div>
           
-
-
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title"><%= campground.title%></h5>
@@ -56,7 +47,7 @@
 
     </div>
     <div class="col-6">
-        <div id='map'></div>
+        <div id="map"></div>
         <% if (currentUser) {%>
         <h2>Leave a Review</h2>
         <form action="/campgrounds/<%=campground._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
@@ -106,4 +97,10 @@
     </div>
 </div>
 
-<script src = "../../public/javascripts/showPageMap.js"></script>
+<script>
+ 
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const campground = <%-JSON.stringify(campground) %>;
+</script>
+
+<script src = "/javascripts/showPageMap.js"></script>
